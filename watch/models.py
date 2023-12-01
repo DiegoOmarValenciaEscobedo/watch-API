@@ -11,8 +11,8 @@ class Watch(models.Model):
         ('h', 'Hybrid'),
     ]
     is_mine = models.BooleanField(default=False)
-    main_image = models.ImageField(upload_to='images/main/' , default='images/main/default.jpg')
-    second_image = models.ImageField(upload_to='images/sec/', default='images/sec/default.jpg')
+    main_image = models.CharField(max_length=300)
+    second_image = models.CharField(max_length=300)
     type = models.CharField(max_length=1, choices=TYPE_CHOICES)
     def __str__(self):
         return self.name
